@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cream: #FDF5F1;
+    --pink: #F2AABE;
+    --purple: #9A9FF1;
+    --blue: #4B70C0;
+    --orange: #FFC4A3;
+    --charcoal: #3C3C3C;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    color: var(--charcoal);
+}
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: var(--cream);
+}
+
+.body-container {
+  margin: 50px 100px 250px 100px;
+}
+
+/* header */
+.navbar {
+  background: white;
+  padding: 16px 24px;
+  border: solid var(--charcoal) 4px;
+  border-radius: 32px;
+  margin: 24px 32px 50px 32px;
+}
+
+.navdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+li a {
+  color: var(--charcoal);
+  margin-right: 48px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+li a:hover {
+  color: var(--purple);
+}
+
+li a.selected {
+  color: var(--purple);
+}
+
+button li a {
+  margin-right: 0px;
+}
+
+button li a:hover {
+  color: white;
+}
+
+button li a.selected {
+  color: white;
+}
+
+button {
+  background-color: var(--purple);
+  border-radius: 24px;
+  border: solid var(--charcoal) 3px;
+  padding: 8px 16px;
+  box-shadow: #3C3C3C;
+  box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button a {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--charcoal);
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navdiv .menu {
+    position:fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .navdiv .menu-item {
+    margin: 16px;
+  }
+
+  .navdiv .menu-item:active {
+    left: 0;
+  }
+}
+
+/* footer */
+footer {
+  display: grid;
+  border-top: 4px solid var(--charcoal);
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  background-color: var(--pink);
+  padding: 20px 36px;
+  margin-top: 50px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-section ul {
+  text-align: center;
+}
+
+.section ul li {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+footer li {
+  display: block;
+}
+
+footer li a {
+  margin: 0;
+}
+
+.section ul button li {
+  margin-bottom: 0px;
+} 
+
+.footer-svg {
+  width: 50px;
+}
+
+.section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.logo-section h2 {
+  font-size: 2rem;
+}
+
+.logo-section p {
+  font-weight: 600;
+}
+
+.logo-section {
+  text-align: center;
+}
+
+.contact-section {
+  padding-left: 20%;
+}
+
+.contact-section li {
+  display: flex;
+  align-items: center;
+  text-align: start;
+}
+
+.contact-section svg {
+  margin-right: 8px;
+  font-size: 6rem;
+}
+
+.socialmedia-section button {
+  background-color: white;
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+
+.socialmedia-section button a {
+  font-weight: 700;
+}
+
+.fa-brands {
+  margin-right: 8px;
+}
+
+.fa-instagram {
+  color: var(--purple);
+}
+
+.fa-facebook-f {
+  color: var(--blue);
+}
+
+.fa-tiktok {
+  color: var(--pink);
+}
+
+ul > li:nth-child(2) > svg {
+  width: 42px;
+}
+
+@media (max-width: 876px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  footer {
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+}
+
+/* 404 */
+.error-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 75px;
+}
+
+.error-section h1 {
+  font-size: 3rem;
+}
+
+.error-section p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 16px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.error-section svg {
+  max-width: 600px;
+  width: 100%;
+}
+
+.back-to-home {
+  text-align: center;
+}
+
+.back-to-home a {
+  display: inline-block;
+  text-align: center;
+  width: 100%; 
+}

@@ -29,6 +29,7 @@ body {
 
 /* header */
 .navbar {
+  position: relative;
   background: white;
   padding: 16px 24px;
   border: solid var(--charcoal) 4px;
@@ -40,6 +41,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.3s;
 }
 
 .logo a {
@@ -72,26 +74,29 @@ li a.selected {
   color: var(--purple);
 }
 
-button li a {
-  margin-right: 0px;
-}
-
-button li a:hover {
+li .menu-button a.selected {
   color: white;
 }
 
-button li a.selected {
+ul.menu li:last-child a {
+  margin-right: 0;
   color: white;
 }
 
-button {
+.menu-button {
   background-color: var(--purple);
+  color: white;
   border-radius: 24px;
   border: solid var(--charcoal) 3px;
   padding: 8px 16px;
   box-shadow: #3C3C3C;
   box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
   transition: all 0.3s ease-in-out;
+}
+
+.menu-button:hover {
+  color: white;
+  transform: scale(1.05);
 }
 
 button:hover {
@@ -103,6 +108,10 @@ button a {
   font-size: 1rem;
   text-decoration: none;
   font-weight: 600;
+}
+
+button a:hover {
+  color: white;
 }
 
 .hamburger {
@@ -138,22 +147,36 @@ button a {
   }
 
   .navdiv .menu {
-    position:fixed;
-    left: -100%;
-    top: 70px;
+    position: fixed;
+    right: -130%;
+    top: 155px;
     gap: 0;
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    background-color: white;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.5s;
+    padding: 32px;
+    margin: 0px 32px;
+    border: solid var(--charcoal) 4px;
+    border-radius: 32px;
+    /* width: 60%; */
   }
 
   .navdiv .menu-item {
     margin: 16px;
   }
 
-  .navdiv .menu-item:active {
-    left: 0;
+  .navdiv .menu.active {
+    right: 0;
+  }
+
+  .navdiv li a {
+    margin-right: 0;
+  }
+
+  .menu button {
+    margin: 16px;
   }
 }
 
@@ -237,6 +260,13 @@ footer li a {
   background-color: white;
   font-size: 1.1rem;
   margin-top: 4px;
+  border-radius: 24px;
+  border: solid var(--charcoal) 3px;
+  padding: 8px 16px;
+  box-shadow: #3C3C3C;
+  box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .socialmedia-section button a {
@@ -304,11 +334,149 @@ ul > li:nth-child(2) > svg {
 }
 
 .back-to-home {
+  background-color: var(--purple);
+  color: white;
+  border-radius: 24px;
+  border: solid var(--charcoal) 3px;
+  padding: 8px 16px;
+  box-shadow: #3C3C3C;
+  box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
+  transition: all 0.3s ease-in-out;
   text-align: center;
+  cursor: pointer;
 }
 
 .back-to-home a {
   display: inline-block;
   text-align: center;
   width: 100%; 
+}
+
+/* blog posts */
+.content {
+  margin: auto;
+  max-width: 1140px;
+  padding: 0 50px;
+}
+
+.wp-element-button {
+  background-color: var(--pink);
+  color: white;
+  border-radius: 24px;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  cursor: default;
+}
+
+.wp-block-heading {
+  margin: 16px 0 8px 0;
+}
+
+.wp-block-image img {
+  width: 100%;
+  max-height: 550px;
+  border-radius: 32px;
+  object-fit: cover;
+  object-fit: center top;
+  margin: 16px 0;
+  border: solid var(--charcoal) 4px;
+}
+
+.content h1 {
+  font-size: 3rem;
+}
+
+.content h2 {
+  font-size: 2.25rem;
+}
+
+.content h3 {
+  font-size: 1.75rem;
+}
+
+.content h4 {
+  font-size: 1.5rem;
+}
+
+.content h5 {
+  font-size: 1.25rem;
+}
+
+.content h6 {
+  font-size: 1rem;
+}
+
+.content p {
+  margin: 0 0 40px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.content li {
+  list-style: circle;
+  display: block;
+  font-size: 1.25rem;
+  margin: 12px 0;
+  font-weight: 500;
+}
+
+.content ul {
+  list-style: disc;
+  margin-left: 16px;
+  margin-bottom: 32px;
+}
+
+.content ol {
+  list-style: decimal;
+  margin-left: 16px;
+  margin-bottom: 32px;
+}
+
+.wp-block-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 32px;
+  margin: 32px 0 16px 0;
+}
+
+.wp-block-image.size-large img {
+  width: 100%;
+  max-height: 450px;
+  border-radius: 32px;
+  object-fit: cover;
+  object-fit: center top;
+  margin-bottom: 0px;
+}
+
+.wp-element-caption {
+  font-size: 1.25rem;
+  margin: 0 16px;
+}
+
+.wp-block-pullquote {
+  max-width: 800px;
+  margin: auto;
+  font-weight: 500;
+  background-color: white;
+  border: solid var(--charcoal) 4px;
+  padding: 16px;
+  border-radius: 32px;
+  box-shadow: #3C3C3C;
+  box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
+  margin-bottom: 32px;
+}
+
+.wp-block-pullquote p {
+  margin-bottom: 4px;
+}
+
+.content p a {
+  color: var(--pink);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.content p a:hover {
+  color: var(--purple);
 }

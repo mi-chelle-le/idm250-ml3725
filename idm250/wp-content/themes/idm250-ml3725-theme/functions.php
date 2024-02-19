@@ -43,3 +43,42 @@ function wrap_menu_item_in_button($items, $args) {
     }
     return $items;
 }
+
+/**
+ * Get menu items as a flat array to use for custom markup
+ * @link https://developer.wordpress.org/reference/functions/wp_nav_menu/
+ * @param string $menu_name - Name of the registered menu id
+ * @return array $menu_items - Array of WP_Post objects.
+ */
+function get_theme_menu($menu_name)
+{
+    // Get menu items as a flat array
+    $locations = get_nav_menu_locations();
+    // If menu doesn't exist, let's just return an empty array
+    if (!isset($locations[$menu_name])) {
+        return [];
+    }
+    $menu = wp_get_nav_menu_object($locations[$menu_name]);
+    $menu_items = wp_get_nav_menu_items($menu->term_id, ['order' => 'DESC']);
+    
+    // Update each menu item to include a string of classes
+    foreach ($menu_items as &$item) {
+        if (!empty($item->classes) && is_array($item->classes)) {
+            // Concatenate all class names into a single string
+            $item->classes = implode(' ', $item->classes);
+        } else {
+            // Ensure classes is always a string, even if empty
+            $item->classes = '';
+        }
+    }
+    unset($item); // Break the reference with the last element
+
+    return $menu_items;
+}
+
+
+// Enable featured images
+add_theme_support('post-thumbnails');
+
+// Enable excerpt
+add_post_type_support('page', 'excerpt');

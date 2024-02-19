@@ -42,8 +42,8 @@
         <h2>Follow Us</h2>
         <ul>
             <li><button class="contact-btn"><i class="fa-brands fa-instagram"></i>Instagram</button></li>
-            <li><button><i class="fa-brands fa-facebook-f"></i>Facebook</button></li>
-            <li><button><i class="fa-brands fa-tiktok"></i>Tiktok</button></li>
+            <li><button class="contact-btn"><i class="fa-brands fa-facebook-f"></i>Facebook</button></li>
+            <li><button class="contact-btn"><i class="fa-brands fa-tiktok"></i>Tiktok</button></li>
         </ul>
       </div>
     </div>

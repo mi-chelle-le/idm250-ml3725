@@ -11,9 +11,14 @@
     </div>
     <div class="section">
       <div class="nav-section">
-      <?php wp_nav_menu([
-      'theme_location' => 'footer'
-      ]); ?>
+      <ul class="menu">
+        <?php 
+          $main_menu = get_theme_menu('primary');
+          foreach ($main_menu as $item) {
+            echo '<li class="menu-item"><a href="' . $item->url . '" class="menu-item '.$item->classes.'">' . $item->title . '</a></li>';
+          }
+        ?>
+        </ul>
       </div>
     </div>
     <div class="section">

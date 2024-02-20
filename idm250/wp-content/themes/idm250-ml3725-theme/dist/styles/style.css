@@ -31,7 +31,7 @@ body {
 .navbar {
   position: relative;
   background: white;
-  padding: 16px 24px;
+  padding: 20px 28px;
   border: solid var(--charcoal) 4px;
   border-radius: 32px;
   margin: 24px 32px 50px 32px;
@@ -83,6 +83,15 @@ ul.menu li:last-child a {
   color: white;
 }
 
+a.menu-button {
+  margin-right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+a.menu-button:hover {
+  transform: scale(1.05);
+}
+
 .menu-button {
   background-color: var(--purple);
   color: white;
@@ -96,7 +105,10 @@ ul.menu li:last-child a {
 
 .menu-button:hover {
   color: white;
-  transform: scale(1.05);
+}
+
+.navdiv .menu-item {
+  display: inline-block;
 }
 
 button:hover {
@@ -149,7 +161,7 @@ button a:hover {
   .navdiv .menu {
     position: fixed;
     right: -130%;
-    top: 155px;
+    top: 125px;
     gap: 0;
     display: flex;
     flex-direction: column;
@@ -160,7 +172,6 @@ button a:hover {
     margin: 0px 32px;
     border: solid var(--charcoal) 4px;
     border-radius: 32px;
-    /* width: 60%; */
   }
 
   .navdiv .menu-item {
@@ -179,6 +190,7 @@ button a:hover {
     margin: 16px;
   }
 }
+
 
 /* footer */
 footer {
@@ -200,6 +212,10 @@ footer {
 
 .nav-section ul {
   text-align: center;
+}
+
+.nav-section .menu-item {
+  display: block;
 }
 
 .section ul li {
@@ -422,15 +438,23 @@ ul > li:nth-child(2) > svg {
 }
 
 .content ul {
-  list-style: disc;
-  margin-left: 16px;
+  margin-left: 32px;
   margin-bottom: 32px;
 }
 
+.content ul li {
+  display: list-item;
+  list-style: disc;
+}
+
 .content ol {
-  list-style: decimal;
-  margin-left: 16px;
+  margin-left: 32px;
   margin-bottom: 32px;
+}
+
+.content ol li {
+  display: list-item;
+  list-style: decimal;
 }
 
 .wp-block-columns {

@@ -24,7 +24,38 @@ body {
 }
 
 .body-container {
-  margin: 50px 100px 250px 100px;
+  margin: 50px 100px 50px 100px;
+}
+
+h1 {
+  margin: auto;
+  max-width: 1140px;
+  padding: 0 50px;
+  font-size: 2.75rem;
+}
+
+.wp-block-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wp-element-button {
+  background-color: var(--purple);
+  color: white;
+  border-radius: 24px;
+  border: solid var(--charcoal) 3px;
+  padding: 8px 16px;
+  box-shadow: #3C3C3C;
+  box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
+  transition: all 0.3s ease-in-out;
+  margin: 24px auto;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.wp-element-button:hover {
+  transform: scale(1.05);
 }
 
 /* header */
@@ -375,7 +406,7 @@ ul > li:nth-child(2) > svg {
   padding: 0 50px;
 }
 
-.wp-element-button {
+.category-tag .wp-element-button {
   background-color: var(--pink);
   color: white;
   border-radius: 24px;
@@ -489,6 +520,7 @@ ul > li:nth-child(2) > svg {
   box-shadow: #3C3C3C;
   box-shadow: 0px 3px 0px rgba(60, 60, 60, 1);
   margin-bottom: 32px;
+  margin-top: 16px;
 }
 
 .wp-block-pullquote p {
@@ -503,4 +535,52 @@ ul > li:nth-child(2) > svg {
 
 .content p a:hover {
   color: var(--purple);
+}
+
+/* default */
+.wp-block-image figcaption {
+  text-align: center;
+}
+
+/* ul.custom-bullet li {
+  list-style-image: url("../../assets/icons/sparkle-pink.svg");
+} */
+
+table {
+  border-collapse: collapse;
+  border: solid 3px black;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 8px; 
+}
+
+table td, table th {
+  border: 3px solid var(--charcoal);
+  padding: 16px;
+}
+
+table th {
+  background-color: var(--pink);
+  color: white;
+  font-size: 1.1rem;
+}
+
+table tfoot {
+  font-weight: 550;
+}
+
+.wp-element-caption {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.wp-block-table td, .wp-block-table th {
+  padding: 1rem;
+  border: 3px solid var(--charcoal);
+}
+
+video {
+  margin: 32px auto;
 }

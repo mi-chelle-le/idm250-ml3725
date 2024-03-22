@@ -82,3 +82,43 @@ add_theme_support('post-thumbnails');
 
 // Enable excerpt
 add_post_type_support('page', 'excerpt');
+
+// Create custom post type called jewelry
+function register_custom_post_types()
+{
+    // Register Jewelry post type
+    $jewelry_args = [
+        'labels' => [
+            'name' => 'Jewelry',
+            'singular_name' => 'Jewelry',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'jewelry'],
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'menu_position' => 5,
+        'show_in_rest' => true,
+    ];
+    $jewelry_post_type_name = 'jewelry';
+
+    register_post_type($jewelry_post_type_name, $jewelry_args);
+
+    // Register Reviews post type
+    $review_args = [
+        'labels' => [
+            'name' => 'Reviews',
+            'singular_name' => 'Review',
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => ['slug' => 'reviews'],
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
+        'menu_position' => 5,
+        'show_in_rest' => true,
+    ];
+    $review_post_type_name = 'review';
+
+    register_post_type($review_post_type_name, $review_args);
+}
+
+add_action('init', 'register_custom_post_types');

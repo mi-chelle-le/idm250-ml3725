@@ -1,14 +1,24 @@
-<?php get_header(); ?>
-  <div class="content">
+<?php
+/* Template Name: Page with Sidebar */
+get_header();
+?>
+
+  <div class="content sidebar-page">
+    <div>
+    <h1>
+        <?php echo get_the_title(); ?>
+    </h1>
     <?php
     echo get_the_content();
     ?>
-    <div class="archive-container-div">
-        <div class="archive-container">
+    </div>
+    <div class="sidebar-container-div">
+        <h3>Recent Articles</h3>
+        <div class="sidebar-container">
             <?php
             $query = new WP_Query([
                 'post_type' => 'post',
-                'posts_per_page' => 2,
+                'posts_per_page' => 3,
                 'orderby' => 'date',
                 'order' => 'DESC'
             ]);
@@ -21,11 +31,6 @@
             endif;
             ?>
         </div>
-    </div>
-    <div class="wp-block-buttons"> 
-        <div class="wp-block-button"> 
-            <a href="<?php echo esc_url(home_url('/idm250/blog')); ?>" class="wp-block-button__link wp-element-button">More Articles</a>
-        </div>
-    </div>
+    </div> 
   </div>
 <?php get_footer(); ?>

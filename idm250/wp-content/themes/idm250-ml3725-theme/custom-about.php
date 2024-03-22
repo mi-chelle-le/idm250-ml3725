@@ -24,19 +24,19 @@ echo '<p class="post-excerpt">' . get_the_excerpt() . '</p>';
     ];
 
 // Create a new WP_Query instance
-$jewelry_query = new WP_Query($args);
+$review_query = new WP_Query($args);
 ?>
 
 <div class="review-container-div">
   <div class="review-container">
 
-      <?php if ($jewelry_query->have_posts()):
-          while ($jewelry_query->have_posts()) : $jewelry_query->the_post();
+      <?php if ($review_query->have_posts()):
+          while ($review_query->have_posts()) : $review_query->the_post();
               get_template_part('components/review-card');
           endwhile; ?>
 
       <?php else : ?>
-      <p>No jewelry found.</p>
+      <p>No reviews found.</p>
       <?php endif; ?>
       <?php wp_reset_postdata(); ?>
 
